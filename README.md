@@ -1,2 +1,3 @@
 # task-flask-crud
-- Study -
+This ain't a project
+Just to study
