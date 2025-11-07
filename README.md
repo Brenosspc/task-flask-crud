@@ -1,2 +1,2 @@
 # task-flask-crud
-Task Flask Crud 
+- Study -
