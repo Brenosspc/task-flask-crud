@@ -44,5 +44,25 @@ def show_user(number):
     print(type(number))
     return "%s" % number """
 
+@app.route('/tasks/<int:id>', methods=['PUT'])
+def update_tasks(id):
+
+    task = None
+    for t in tasks:
+        if t.id == id:
+            task = t
+    
+    print(task)
+    if task == None:
+        return jsonify({"message": "Nao foi possivel encontrar a atividade"}), 404
+
+    data = request.get_json()
+    task.title = data['title']
+    task.decription = data['description']
+    task.completed = data['completed']
+    print(task)
+    return jsonify({"message": "Tarefa atalizada com sucesso"})
+
+
 if __name__ == "__main__":
     app.run(debug=True)
